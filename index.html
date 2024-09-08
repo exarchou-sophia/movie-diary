@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="https://cdn.tailwindcss.com"></script>
+
         <title>Film Scope</title>
         <style>
             html {
@@ -18,9 +19,15 @@
             <div class="logo">
                 <h2 class="text">🎥Film Scope</h2>
             </div>
+
             <div class="search">
-                <input type="text" value="search" placeholder="Search Movies" />
+                <input
+                    id="searchInput"
+                    type="text"
+                    placeholder="Search Movies"
+                />
             </div>
+
             <nav class="w-[15%]">
                 <ul class="flex justify-evenly items-center">
                     <li><a href="index.html" target="_blanks">Home Page</a></li>
@@ -29,6 +36,18 @@
             </nav>
         </header>
         <main>
+            <h3>Search Results</h3>
+            <!-- ul tag for the search results to be listed as li -->
+            <ul id="searchResults"></ul>
+
+            <div>--------------------------------</div>
+            <h3>Top 10 most Popular Movies</h3>
+            <!-- 
+                an ul for the 10 most popular movies (task asked for popular movies and search bar,
+                so using Api for most popular movies and movies by Name) 
+             -->
+            <ul id="popularMovieList"></ul>
+
             <div
                 class="cardsContainer w-[80%] my-[10rem] mx-auto border-2 border-white h-[80rem] shadow-lg grid grid-cols-3 p-[7rem]"
             >
@@ -37,5 +56,7 @@
                 ></div>
             </div>
         </main>
+
+        <script src="./main.js"></script>
     </body>
 </html>
