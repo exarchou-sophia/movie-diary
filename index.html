@@ -4,7 +4,21 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="https://cdn.tailwindcss.com"></script>
-
+        <script>
+            tailwind.config = {
+                theme: {
+                    boxShadow: {
+                        lg: "3px 3px 45px rgba(2, 15, 29, 0.7)",
+                        "3xl": "10px 10px 60px #020F1D",
+                    },
+                    extend: {
+                        colors: {
+                            clifford: "#da373d",
+                        },
+                    },
+                },
+            };
+        </script>
         <title>Film Scope</title>
         <style>
             html {
@@ -12,7 +26,7 @@
             }
         </style>
     </head>
-    <body class="bg-[#333745] text-[1.6rem]">
+    <body class="bg-[#5D7886] text-[1.6rem]">
         <header
             class="bg-[#E63462] flex justify-between items-center h-[5rem] py-[2rem] px-[7rem]"
         >
@@ -48,7 +62,7 @@
              -->
             <ul
                 id="popularMovieList"
-                class="cardsContainer w-[80%] my-[10rem] mx-auto border-2 border-white shadow-lg grid grid-cols-3 p-[7rem]"
+                class="cardsContainer w-[90%] mx-auto border-2 border-white shadow-lg grid grid-cols-6 p-[7rem] gap-x-[3rem] gap-y-[5rem] bg-[rgba(125,145,157,68)] rounded-b-[7.5rem]"
             ></ul>
         </main>
 
