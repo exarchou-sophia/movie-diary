@@ -42,6 +42,7 @@ const getPopularMovies = () =>
 document.addEventListener("DOMContentLoaded", async () => {
     try {
         const popularMovies = await getPopularMovies();
+        localStorage.setItem('movie',JSON.stringify(popularMovies));
         const popMoviesView = document.getElementById("popularMovieList");
 
         popularMovies.slice(0, 10).forEach(movie => {
