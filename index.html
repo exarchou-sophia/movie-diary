@@ -4,21 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="https://cdn.tailwindcss.com"></script>
-        <script>
-            tailwind.config = {
-                theme: {
-                    boxShadow: {
-                        lg: "3px 3px 45px rgba(2, 15, 29, 0.7)",
-                        "3xl": "10px 10px 60px #020F1D",
-                    },
-                    extend: {
-                        colors: {
-                            clifford: "#da373d",
-                        },
-                    },
-                },
-            };
-        </script>
+
         <title>Film Scope</title>
         <style>
             html {
@@ -51,18 +37,19 @@
         </header>
         <main>
             <h3>Search Results</h3>
-            <!-- ul tag for the search results to be listed as li -->
+            ul tag for the search results to be listed as li
             <ul id="searchResults"></ul>
 
             <div>--------------------------------</div>
             <h3>Top 10 most Popular Movies</h3>
-            <!-- 
-                an ul for the 10 most popular movies (task asked for popular movies and search bar,
-                so using Api for most popular movies and movies by Name) 
-             -->
+
+            an ul for the 10 most popular movies (task asked for popular movies
+            and search bar, so using Api for most popular movies and movies by
+            Name)
+
             <ul
                 id="popularMovieList"
-                class="cardsContainer w-[90%] mx-auto border-2 border-white shadow-lg grid grid-cols-6 p-[7rem] gap-x-[3rem] gap-y-[5rem] bg-[rgba(125,145,157,68)] rounded-b-[7.5rem]"
+                class="cardsContainer w-[80%] my-[10rem] mx-auto border-2 border-white shadow-lg grid grid-cols-3 p-[7rem]"
             ></ul>
         </main>
 
