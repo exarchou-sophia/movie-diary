@@ -46,10 +46,19 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         popularMovies.slice(0, 10).forEach(movie => {
             console.log("movie.poster_path}", movie.poster_path);
+            console.log(movie);
 
             const item = document.createElement("li");
-            item.textContent = movie.original_title;
-            item.style = `background-position: center; background-repeat: no-repeat; background-size: contain; color: white; background-image: url('${movie.poster_path}'); width: 100px; height: 100px`;
+            item.innerHTML = `<div>
+            <img src=${movie.poster_path} alt="movie poste" class="w-[25rem]"/>
+            
+            <h4>${movie.title}</h4>
+            <div>
+            <span>⭐️ ${movie.vote_average.toFixed(1)}</span>
+            <span>| ${movie.release_date.split("-")[0]}</span>
+            </div>
+            </div>`;
+
             popMoviesView.appendChild(item);
         });
     } catch (error) {
