@@ -5,6 +5,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="https://cdn.tailwindcss.com"></script>
 
+
+
+        <script>
+            tailwind.config = {
+                theme: {
+                    boxShadow: {
+
+                        lg: "0.5rem 0.5rem  5rem  rgba(2, 15, 29, 0.7)",
+
+                        "2xl": "1rem 1rem 6rem  rgba(2, 15, 29, 1)",
+                    },
+                   
+
+                },
+            };
+        </script>
+
         <title>Film Scope</title>
         <style>
             html {
@@ -36,6 +53,7 @@
             </nav>
         </header>
         <main>
+
             <h3>Search Results</h3>
             ul tag for the search results to be listed as li
             <ul id="searchResults"></ul>
@@ -43,13 +61,14 @@
             <div>--------------------------------</div>
             <h3>Top 10 most Popular Movies</h3>
 
-            an ul for the 10 most popular movies (task asked for popular movies
-            and search bar, so using Api for most popular movies and movies by
-            Name)
+
 
             <ul
                 id="popularMovieList"
-                class="cardsContainer w-[80%] my-[10rem] mx-auto border-2 border-white shadow-lg grid grid-cols-3 p-[7rem]"
+
+                class="cardsContainer w-[90%] mx-auto mb-[10rem] shadow-2xl bg-[rgba(125,145,157,60)] grid grid-cols-2 md:grid-cols-4 xl:grid-cols-5 gap-[1.5rem] md:gap-[5rem] p-[7rem] rounded-b-[5rem] text-white"
+
+
             ></ul>
         </main>
 
