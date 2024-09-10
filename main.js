@@ -50,7 +50,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             const item = document.createElement("li");
             item.innerHTML = `<div>
-            <img src=${movie.poster_path} alt="movie poste" class="w-[25rem]"/>
+            <img src=${
+                movie.poster_path
+            } alt="movie poster" class="rounded-[4rem] w-full shadow-lg"/>
             
             <h4>${movie.title}</h4>
             <div>
