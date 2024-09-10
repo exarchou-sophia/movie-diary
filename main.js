@@ -49,12 +49,14 @@ document.addEventListener("DOMContentLoaded", async () => {
             // console.log(movie);
 
             const item = document.createElement("li");
+
             item.innerHTML = `
             <img src=${
                 movie.poster_path
             } alt="movie poste" class="w-full rounded-[3rem] shadow-lg"/>
             <div class="mt-[7px] pl-[2rem]">
             <h4 class="text-[1.4rem] md:text-[1.6rem]">${movie.title}</h4>
+
             <span>⭐️ ${movie.vote_average.toFixed(1)}</span>
             <span>| ${movie.release_date.split("-")[0]}</span>
             </div>
