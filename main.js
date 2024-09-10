@@ -45,15 +45,15 @@ document.addEventListener("DOMContentLoaded", async () => {
         const popMoviesView = document.getElementById("popularMovieList");
 
         popularMovies.slice(0, 10).forEach(movie => {
-            console.log("movie.poster_path}", movie.poster_path);
-            console.log(movie);
+            // console.log("movie.poster_path}", movie.poster_path);
+            // console.log(movie);
 
             const item = document.createElement("li");
 
             item.innerHTML = `
-            <a href="#"><img src=${
+            <img src=${
                 movie.poster_path
-            } alt="movie poste" class="w-full rounded-[3rem] shadow-lg"/></a>
+            } alt="movie poste" class="w-full rounded-[3rem] shadow-lg"/>
             <div class="mt-[7px] pl-[2rem]">
             <h4 class="text-[1.4rem] md:text-[1.6rem]">${movie.title}</h4>
 
@@ -64,6 +64,16 @@ document.addEventListener("DOMContentLoaded", async () => {
             item.classList.add("flex", "flex-col", "justify-between");
             popMoviesView.appendChild(item);
         });
+
+        const favItems = document.querySelectorAll("li");
+        favItems.forEach(element =>
+            element.addEventListener("click", function () {
+                const favList =
+                    JSON.parse(localStorage.getItem("favList")) || [];
+                favList.push(element);
+                localStorage.setItem("favList", JSON.stringify(favList));
+            })
+        );
     } catch (error) {
         console.error(error);
     }
