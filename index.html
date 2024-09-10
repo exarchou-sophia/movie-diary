@@ -8,14 +8,13 @@
             tailwind.config = {
                 theme: {
                     boxShadow: {
-                        lg: "3px 3px 45px rgba(2, 15, 29, 0.7)",
-                        "3xl": "10px 10px 60px #020F1D",
+
+                        lg: "0.5rem 0.5rem  5rem  rgba(2, 15, 29, 0.7)",
+
+                        "2xl": "1rem 1rem 6rem  rgba(2, 15, 29, 1)",
                     },
-                    extend: {
-                        colors: {
-                            clifford: "#da373d",
-                        },
-                    },
+                   
+
                 },
             };
         </script>
@@ -50,19 +49,22 @@
             </nav>
         </header>
         <main>
-            <h3>Search Results</h3>
-            <!-- ul tag for the search results to be listed as li -->
-            <ul id="searchResults"></ul>
+            <!-- <h3>Search Results</h3>
+            ul tag for the search results to be listed as li
+             <ul id="searchResults"></ul> -->
 
-            <div>--------------------------------</div>
-            <h3>Top 10 most Popular Movies</h3>
+            <!-- <div>--------------------------------</div>
+            <h3>Top 10 most Popular Movies</h3> -->
+
             <!-- 
                 an ul for the 10 most popular movies (task asked for popular movies and search bar,
                 so using Api for most popular movies and movies by Name) 
              -->
             <ul
                 id="popularMovieList"
-                class="cardsContainer w-[90%] mx-auto border-2 border-white shadow-lg grid grid-cols-6 p-[7rem] gap-x-[3rem] gap-y-[5rem] bg-[rgba(125,145,157,68)] rounded-b-[7.5rem]"
+
+                class="cardsContainer w-[90%] mx-auto mb-[10rem] shadow-2xl bg-[rgba(125,145,157,60)] grid grid-cols-2 md:grid-cols-4 xl:grid-cols-5 gap-[1.5rem] md:gap-[5rem] p-[7rem] rounded-b-[5rem] text-white"
+
             ></ul>
         </main>
 
