@@ -41,9 +41,8 @@ const getPopularMovies = () =>
 // for specific ones by title.
 document.addEventListener("DOMContentLoaded", async () => {
     try {
-        localStorage.clear();
         const popularMovies = await getPopularMovies();
-        localStorage.setItem('movie',JSON.stringify(popularMovies));
+        localStorage.setItem("movie", JSON.stringify(popularMovies));
         const popMoviesView = document.getElementById("popularMovieList");
 
         popularMovies.slice(0, 10).forEach((movie, i) => {
@@ -81,20 +80,29 @@ document.addEventListener("DOMContentLoaded", async () => {
         favButtons.forEach(button =>
             button.addEventListener("click", function () {
                 const favMovie = this.parentElement;
-                const i = favMovie.classList[1].split("_")[1];
+                console.log(favMovie.children);
+                const favmovieClass = favMovie.classList[1];
+                console.log(favmovieClass);
+
                 const favMovieObj = {
-                    imgSrc: document.querySelector("img").src,
-                    title: document.querySelector("h4").textContent,
-                    votes: document.querySelector(`.movie_${i}  .vote`)
+                    imgSrc: document.querySelector(`.${favmovieClass} img`).src,
+                    title: document.querySelector(`.${favmovieClass} h4`)
+                        .textContent,
+                    votes: document.querySelector(`.${favmovieClass} .vote`)
                         .textContent,
                     realeaseDate: document.querySelector(
-                        `.movie_${i}  .realese_date`
+                        `.${favmovieClass} .realese_date`
                     ).textContent,
                 };
+                console.log(favMovieObj);
                 const favList =
                     JSON.parse(localStorage.getItem("favList")) || [];
+                const localStorageFavList = JSON.parse(
+                    localStorage.getItem("favList")
+                );
 
                 favList.push(favMovieObj);
+
                 localStorage.setItem("favList", JSON.stringify(favList));
                 console.log(JSON.parse(localStorage.getItem("favList")));
             })
