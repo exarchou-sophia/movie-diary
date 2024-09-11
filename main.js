@@ -41,6 +41,7 @@ const getPopularMovies = () =>
 // for specific ones by title.
 document.addEventListener("DOMContentLoaded", async () => {
     try {
+        localStorage.clear();
         const popularMovies = await getPopularMovies();
         const popMoviesView = document.getElementById("popularMovieList");
 
@@ -52,14 +53,16 @@ document.addEventListener("DOMContentLoaded", async () => {
             item.innerHTML = `
             <img src=${
                 movie.poster_path
-            } alt="movie poste" class="w-full rounded-[3rem] shadow-lg"/>
-            <div class="movie_info_text mt-[7px] pl-[2rem]">
+            } alt="movie poster" class="w-full rounded-[3rem] shadow-lg ] cursor-pointer"/>
+            <div class="movie_info_text mt-[7px] pl-[2rem">
             <h4 class="text-[1.4rem] md:text-[1.6rem]">${movie.title}</h4>
             <span class="vote" >⭐️ ${movie.vote_average.toFixed(1)}</span>
             <span class="realese_date">| ${
                 movie.release_date.split("-")[0]
             }</span>
+         
             </div>
+               <button class="w-[80%] mt-[1rem] py-[5px] px-[2rem] text-[1.4rem] bg-[#020F1D] rounded-full">+ Add to favorites</button>
             `;
             item.classList.add(
                 "movie",
@@ -71,20 +74,23 @@ document.addEventListener("DOMContentLoaded", async () => {
             popMoviesView.appendChild(item);
         });
 
-        const favItems = document.querySelectorAll(".movie");
-        favItems.forEach((element, i) =>
-            element.addEventListener("click", function () {
+        const favButtons = document.querySelectorAll("button");
+        favButtons.forEach(button =>
+            button.addEventListener("click", function () {
+                const favMovie = this.parentElement;
+                const i = favMovie.classList[1].split("_")[1];
                 const favMovieObj = {
                     imgSrc: document.querySelector("img").src,
                     title: document.querySelector("h4").textContent,
-                    votes: document.querySelector(`.movie_${i + 1}  .vote`)
+                    votes: document.querySelector(`.movie_${i}  .vote`)
                         .textContent,
                     realeaseDate: document.querySelector(
-                        `.movie_${i + 1}  .realese_date`
+                        `.movie_${i}  .realese_date`
                     ).textContent,
                 };
                 const favList =
                     JSON.parse(localStorage.getItem("favList")) || [];
+
                 favList.push(favMovieObj);
                 localStorage.setItem("favList", JSON.stringify(favList));
                 console.log(JSON.parse(localStorage.getItem("favList")));
