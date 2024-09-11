@@ -1,7 +1,7 @@
 const favMovie = JSON.parse(localStorage.getItem('favList'))
 document.addEventListener("DOMContentLoaded", async () => {
     try {
-        const popMoviesView = document.getElementById("popularMovieList")
+        const popMoviesFav = document.getElementById("popularMovieList")
         favMovie.forEach(movie => {
             const item = document.createElement("li");
             item.innerHTML = `
@@ -11,9 +11,10 @@ document.addEventListener("DOMContentLoaded", async () => {
             <span>${movie.votes}</span>
             <span>${movie.releaseDate}</span>
             </div>
+            <button class="w-[80%] mt-[1rem] py-[5px] px-[2rem] text-[1.4rem] bg-[#020F1D] rounded-full">+ Delete from Favorites</button>
             `
             item.classList.add("flex", "flex-col", "justify-between");
-            popMoviesView.appendChild(item);
+            popMoviesFav.appendChild(item);
         })
     } catch (error) {
         console.error(error);
