@@ -100,10 +100,15 @@ document.addEventListener("DOMContentLoaded", async () => {
                 const localStorageFavList = JSON.parse(
                     localStorage.getItem("favList")
                 );
+                if (!favList.some((e) => e.title === favMovieObj.title)) {
+                    favList.push(favMovieObj);
 
-                favList.push(favMovieObj);
+                    localStorage.setItem("favList", JSON.stringify(favList));
+                } 
+                else {
+                    console.log('Already added to favorite')
+                }
 
-                localStorage.setItem("favList", JSON.stringify(favList));
                 console.log(JSON.parse(localStorage.getItem("favList")));
             })
         );
