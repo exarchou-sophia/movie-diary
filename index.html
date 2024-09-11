@@ -32,40 +32,38 @@
     </head>
     <body class="bg-[#5D7886] text-[1.6rem]">
         <header
-            class="bg-[#E63462] flex justify-between items-center h-[5rem] py-[2rem] px-[7rem]"
+            class="w-[90%] mx-auto bg-[rgb(125,145,157)] flex justify-between items-center h-[7rem] py-[2rem] px-[7rem] shadow-2xl text-white"
         >
             <div class="logo">
-                <h2 class="text">🎥Film Scope</h2>
+                <h2 class="text text-[1.8rem]">🎥 Film Scope</h2>
             </div>
 
-            <div class="search">
+            <div class="search w-[30%]">
                 <input
                     id="searchInput"
                     type="text"
                     placeholder="Search Movies"
+                    class="w-full bg-[#020F1D] rounded-full py-[5px] px-[2rem]"
                 />
             </div>
 
-            <nav class="w-[15%]">
+            <nav class="w-[20%]">
                 <ul class="flex justify-evenly items-center">
-                    <li><a href="index.html" target="_blanks">Home Page</a></li>
+                    <li>
+                        <a
+                            href="index.html"
+                            class="text-[#020F1D]"
+                            target="_blanks"
+                            >Home Page</a
+                        >
+                    </li>
                     <li><a href="journal.html" target="_blanks">Journal</a></li>
                 </ul>
             </nav>
         </header>
         <main>
 
-            <h3>Search Results</h3>
-            <!-- ul tag for the search results to be listed as li -->
             <ul id="searchResults"></ul>
-
-            <div>--------------------------------</div>
-            <h3>Top 10 most Popular Movies</h3>
-
-            <!-- 
-                an ul for the 10 most popular movies (task asked for popular movies and search bar,
-                so using Api for most popular movies and movies by Name) 
-             -->
 
 
 
