@@ -1,11 +1,11 @@
+import { getMoviesByTitle } from "./search.js";
+
 const favMovie = JSON.parse(localStorage.getItem("favList"));
 document.addEventListener("DOMContentLoaded", async () => {
     try {
-
-        const popMoviesFav = document.getElementById("popularMovieList")
+        const popMoviesFav = document.getElementById("popularMovieList");
         let buttonIdCounter = 1;
         favMovie.forEach((movie, index) => {
-
             const item = document.createElement("li");
             item.innerHTML = `
             <a href="#"><img src="${movie.imgSrc}" alt="movie poste" class="w-full rounded-[3rem] shadow-lg"/></a>
@@ -20,13 +20,10 @@ document.addEventListener("DOMContentLoaded", async () => {
             item.classList.add("flex", "flex-col", "justify-between");
             popMoviesFav.appendChild(item);
         });
-
-
     } catch (error) {
         console.error(error);
     }
 });
-
 
 document.addEventListener("DOMContentLoaded", async () => {
     try {
@@ -56,11 +53,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 function deleteFav(title) {
-    let favList = JSON.parse(localStorage.getItem('favList')) || [];
+    let favList = JSON.parse(localStorage.getItem("favList")) || [];
     favList = favList.filter(movie => movie.title !== title);
-    localStorage.setItem('favList', JSON.stringify(favList));
+    localStorage.setItem("favList", JSON.stringify(favList));
 }
-
 
 // const movie2 = JSON.parse(localStorage.getItem('movie'))
 // console.log(movie2)
