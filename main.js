@@ -60,8 +60,18 @@ document.addEventListener("DOMContentLoaded", async () => {
                 console.log(favMovieObj);
                 const favList =
                     JSON.parse(localStorage.getItem("favList")) || [];
-                favList.push(favMovieObj);
-                localStorage.setItem("favList", JSON.stringify(favList));
+                const localStorageFavList = JSON.parse(
+                    localStorage.getItem("favList")
+                );
+                if (!favList.some((e) => e.title === favMovieObj.title)) {
+                    favList.push(favMovieObj);
+
+                    localStorage.setItem("favList", JSON.stringify(favList));
+                } 
+                else {
+                    console.log('Already added to favorite')
+                }
+
                 console.log(JSON.parse(localStorage.getItem("favList")));
             })
         );
